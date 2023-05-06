@@ -1,1 +1,1 @@
-{"touhou": ["Alice", "Marisa", "Mokou"], "FE": ["Olivia"]}
+{"touhou": ["Alice", "Marisa", "Mokou"], "FE": ["Olivia", "Camilla", "Henry", "Xander"]}

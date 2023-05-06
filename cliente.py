@@ -38,8 +38,9 @@ class Interface:
         '''Faz requisicoes ao servidor e exibe o resultado.
         Entrada: socket conectado ao servidor'''
         # le as mensagens do usuario ate ele digitar 'fim'
+        print("Digite 'L' para ler, 'E' para escrever ou 'fim' para terminar a conexão")
         while True: 
-            msg = input("Digite uma mensagem ('fim' para terminar):")
+            msg = input("Digite uma mensagem:")
             if msg == 'fim': break 
 
             # envia a mensagem do usuario para o servidor

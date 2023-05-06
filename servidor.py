@@ -108,7 +108,7 @@ class Servidor:
                     return
                 print(str(endr) + ': ' + str(texto, encoding='utf-8'))
                 self.dicionario.escreverDicionario(str(chave, encoding='utf-8'),str(texto, encoding='utf-8'), self.lock)
-                self.sendMessage(clisock,str(chave, encoding='utf-8') + ':' + str(texto, encoding='utf-8'))
+                self.sendMessage(clisock, str(texto, encoding='utf-8') + ' foi incluido na chave ' + str(chave, encoding='utf-8'))
             elif str(data, encoding='utf-8') == "L":
                 self.sendMessage(clisock,"Escreva a chave")
                 chave = self.recvMessage(clisock) 
@@ -119,7 +119,7 @@ class Servidor:
                 print(str(endr) + ': ' + str(chave, encoding='utf-8'))
                 texto = self.dicionario.lerDicionario(str(chave, encoding='utf-8'), self.lock)
                 self.sendMessage(clisock,texto)
-            else: self.sendMessage(clisock,str(data, encoding='utf-8')) # ecoa os dados para o cliente
+            else: self.sendMessage(clisock,"Comando nao reconhecido") # ecoa os dados para o cliente
 
     def iniciaServidor(self):
         '''Cria um socket de servidor e o coloca em modo de espera por conexoes
